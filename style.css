@@ -1,0 +1,1165 @@
+/* style.css - النسخة النهائية والمصححة */
+
+:root {
+    --primary-color: #0056b3; /* أزرق داكن */
+    --accent-color: #0dcaf0;  /* لبني */
+    --bg-light: #f8f9fa;      /* أبيض مائل للرمادي للخلفيات */
+    --text-color: #333333;
+}
+
+/* 1. تفعيل الخطوط للموقع كله */
+body {
+    /* لو الكلام عربي يشتغل Changa، لو إنجليزي يشتغل Rajdhani */
+    font-family: 'Rajdhani', 'Changa', sans-serif;
+    background-color: #f8f9fa; /* لون خلفية مريح للعين */
+}
+
+/* 2. تحسين شكل العناوين (H1, H2, H3...) */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-weight: 700; /* نخلي العناوين عريضة */
+    text-transform: uppercase; /* الحروف الإنجليزي تكون كابيتال (شكلها أقوى في الهاردوير) */
+    letter-spacing: 1px; /* مسافة بسيطة بين الحروف بتدي شياكة */
+}
+
+/* 3. تحسين شكل الأرقام والأسعار */
+.price-tag, .builder-total {
+    font-family: 'Rajdhani', sans-serif; /* الأرقام شكلها أحلى بكتير في الخط ده */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ============================
+   1. Navbar & Logo Styles
+   ============================ */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 60px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.navbar-brand i {
+    font-size: 1.8rem;
+    margin-left: 5px;
+}
+
+/* ============================
+   2. Hero Slider (Carousel)
+   ============================ */
+.carousel-item img {
+    height: 550px;
+    object-fit: cover;
+    filter: brightness(0.85);
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px;
+    }
+    .carousel-caption h2 {
+        font-size: 1.5rem;
+    }
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================
+   3. Section Headers
+   ============================ */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 45px;
+    color: var(--primary-color);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* ============================
+   4. Cards (Product & Category)
+   ============================ */
+.category-card, .product-card {
+    transition: all 0.3s ease;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    height: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-color: var(--accent-color);
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    border-color: #e0e0e0;
+}
+
+.category-card i {
+    transition: color 0.3s ease;
+}
+
+.category-card:hover i {
+    color: var(--accent-color) !important;
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: contain;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    min-height: 48px;
+}
+
+.price-tag {
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-top: auto;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+    border-color: #004494;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* ============================
+   5. Horizontal Slider
+   ============================ */
+.category-section {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-right: 5px solid var(--primary-color);
+    background: linear-gradient(90deg, rgba(0,86,179,0.05) 0%, rgba(255,255,255,0) 100%);
+    border-radius: 4px;
+}
+
+.category-header h3 {
+    font-size: 1.3rem;
+}
+
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px 5px;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none; 
+}
+
+.scrolling-wrapper .product-card {
+    min-width: 280px;
+    max-width: 280px;
+    flex: 0 0 auto;
+}
+
+/* ============================
+   6. WhatsApp Button
+   ============================ */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    color: white;
+}
+
+/* ============================
+   7. Animations & Effects
+   ============================ */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 86, 179, 0.15) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* ============================
+   8. Team Image Styles (تصميم محسن واحترافي)
+   ============================ */
+.team-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 550px; /* حجم مناسب عشان متكنش عريضة أوي */
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    /* الظل هنا قوي عشان يبرز الصورة */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); 
+    border: 5px solid #ffffff; /* إطار أبيض شيك */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-photo {
+    width: 100%;
+    height: 450px; 
+    object-fit: cover; 
+    /* التغيير ده مهم عشان الوشوش تظهر لو الصورة مقطوعة */
+    object-position: top center; 
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* التدرج اللوني عشان يدي عمق */
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,86,179,0.3) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* تأثير التفاعل */
+.team-image-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.team-image-container:hover .team-photo {
+    transform: scale(1.05); /* زووم بسيط وسلس */
+}
+
+/* =========================================
+   تحديثات النافبار الجديدة (Glassmorphism)
+   ========================================= */
+.navbar {
+    background: rgba(255, 255, 255, 0.9) !important; /* شفافية بسيطة */
+    backdrop-filter: blur(10px); /* تأثير الزجاج */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); /* ظل ناعم جداً */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* تنسيق اسم Core-X جنب اللوجو */
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-right: 10px; /* مسافة بين الصورة والاسم */
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* تدرج لوني في النص */
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* تحسين شكل لينكات النافبار */
+.nav-link {
+    font-weight: 600;
+    position: relative;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+/* خط بيتحرك تحت اللينك لما تقف عليه */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* =========================================
+   ستايل السيرش بار (Delicious Search) 🔍
+   ========================================= */
+.search-wrapper {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 40px auto; /* توسيط ومسافة من تحت */
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 50px 15px 25px; /* مساحة للأيقونة */
+    border-radius: 50px; /* شكل دائري */
+    border: 2px solid #e1e1e1;
+    background-color: #f8f9fa;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* لما تدوس جوه السيرش */
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15); /* توهج خفيف */
+    transform: translateY(-2px);
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px; /* مكان الأيقونة */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 1.2rem;
+    pointer-events: none; /* عشان الكتابة تيجي تحتها عادي */
+    transition: color 0.3s ease;
+}
+
+.search-input:focus + .search-icon {
+    color: var(--primary-color);
+}
+
+/* =========================================
+   1. Dark Mode Styles 🌙
+   ========================================= */
+[data-bs-theme="dark"] body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+[data-bs-theme="dark"] .bg-light {
+    background-color: #1e1e1e !important;
+}
+[data-bs-theme="dark"] .card {
+    background-color: #242424;
+    border-color: #333;
+}
+[data-bs-theme="dark"] .navbar {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-bottom: 1px solid #333;
+}
+[data-bs-theme="dark"] .section-title {
+    color: #fff;
+}
+[data-bs-theme="dark"] .text-muted {
+    color: #a0a0a0 !important;
+}
+
+/* Footer Dark Mode Styles */
+[data-bs-theme="dark"] footer {
+    background-color: #000 !important;
+    border-top: 1px solid #333;
+}
+
+[data-bs-theme="dark"] footer .text-info {
+    color: #64b5f6 !important;
+}
+
+[data-bs-theme="dark"] footer .text-primary {
+    color: #2196F3 !important;
+}
+
+[data-bs-theme="dark"] footer .border-secondary {
+    border-color: #444 !important;
+}
+
+/* Footer Light Mode Styles */
+footer {
+    background-color: #212529 !important;
+    transition: background-color 0.3s ease;
+}
+
+footer .text-info {
+    transition: color 0.3s ease;
+}
+
+footer .text-primary {
+    transition: color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: rotate(30deg);
+}
+
+/* =========================================
+   2. Product Badges 🔥
+   ========================================= */
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.badge-sale { background-color: #dc3545; } /* أحمر للخصم */
+.badge-new { background-color: #198754; }  /* أخضر للجديد */
+.badge-stock { background-color: #6c757d; } /* رمادي للنافذ */
+
+/* =========================================
+   3. Star Ratings ⭐
+   ========================================= */
+.stars-container {
+    color: #ffc107; /* لون دهبي */
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   4. Side Cart Drawer 🛒
+   ========================================= */
+.offcanvas-cart {
+    background-color: var(--bg-light);
+}
+.cart-item-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.checkout-btn {
+    background: linear-gradient(45deg, var(--primary-color), #003d80);
+    border: none;
+    font-weight: bold;
+}
+
+.product-card {
+    border: none;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* ظل ناعم */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* الكارت يطلع لفوق لما تقف عليه */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.price-tag {
+    color: #0d6efd;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* تنسيق كارت المنتج */
+.product-card {
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* توحيد حجم الصور - مهم جداً */
+.product-image-container {
+    height: 250px; /* ارتفاع ثابت للصورة */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+}
+
+.product-image-container img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* عشان الصورة تظهر كاملة جوه المربع */
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image-container img {
+    transform: scale(1.1); /* تكبير بسيط للصورة لما تقف عليها */
+}
+
+/* شارة الخصم */
+.badge-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px; /* عشان الموقع عربي */
+    z-index: 2;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* النجوم */
+.stars {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+/* 1. تكبير حجم اللوجو */
+.logo-container {
+    width: 70px;   /* كبرناه من 50 لـ 70 */
+    height: 70px;
+    cursor: pointer;
+    /* ده عشان يوسطن اللوجو لو فيه أي إزاحة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible; /* مهم جداً عشان الطبقات لما تبعد متختفيش */
+}
+
+/* 2. تحسين شكل الطبقات والظلال */
+.layer {
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* حركة فيها "نطة" بسيطة (Bouncy) */
+    stroke: rgba(255,255,255,0.5); /* حدود بيضاء خفيفة عشان تفصل الطبقات */
+    stroke-width: 1px;
+    filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.2)); /* ظل أقوى شوية */
+    transform-origin: center;
+}
+
+/* 3. تعديل مسافات الحركة (عشان تكون أوضح) */
+
+/* الطبقة اللي فوق */
+.logo-container:hover .layer-top {
+    transform: translateY(-25px) scale(1.1); /* تبعد لفوق أكتر */
+    fill: #244b8a; /* تفتيح بسيط للون عند اللمس */
+}
+
+/* الطبقة اللي في النص */
+.logo-container:hover .layer-middle {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* الطبقة اللي تحت */
+.logo-container:hover .layer-bottom {
+    transform: translateY(25px) scale(0.9); /* تنزل لتحت أكتر */
+}
+
+/* تكبير حجم اسم البراند عشان يليق مع اللوجو الكبير */
+.brand-name {
+    color: #1a3b70;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.8rem; /* كبرنا الخط */
+    letter-spacing: 1px;
+}
+
+/* --- تنسيقات صفحة العروض --- */
+
+/* 1. هيدر العروض (خلفية غامقة وشيك) */
+.offer-header {
+    background: linear-gradient(135deg, #0b1120 0%, #1a3b70 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* دوائر ديكور في الخلفية */
+.offer-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+/* 2. وحدات العداد التنازلي */
+.time-unit {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.time-unit span {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
+    color: #fff;
+    line-height: 1;
+}
+
+.time-unit small {
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+/* 3. كارت التجميعة (Bundle Card) */
+.bundle-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.bundle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    border-color: #3b82f6 !important; /* البرواز ينور أزرق */
+}
+
+.specs-list i {
+    width: 20px;
+    text-align: center;
+}
+
+/* تأثير الرفع للكروت */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* تنسيق حروف العناوين الصغيرة */
+.ls-2 {
+    letter-spacing: 2px;
+}
+
+/* --- تنسيقات الشعار الاحترافي --- */
+
+/* تنسيق الحاوية والنقاط الفاصلة */
+.slogan-container {
+    color: rgba(255, 255, 255, 0.6); /* لون أبيض مطفي */
+    font-weight: 500;
+    overflow: hidden; /* عشان الحركة تيجي من تحت */
+}
+
+.slogan-dot {
+    color: #3b82f6; /* لون أزرق للنقاط */
+    margin: 0 3px;
+    opacity: 0.8;
+}
+
+/* تنسيق أجزاء الشعار الأساسي */
+.slogan-part {
+    display: inline-block;
+    opacity: 0; /* مخفي في البداية */
+    transform: translateY(20px); /* نازل لتحت شوية */
+    /* تطبيق الحركة */
+    animation: techReveal 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+/* تأخير زمني لكل جزء عشان يظهروا ورا بعض */
+.slogan-part.part-1 {
+    animation-delay: 0.5s; /* يظهر بعد نص ثانية من فتح الموقع */
+}
+.slogan-part.part-2 {
+    animation-delay: 1.2s; /* يظهر بعد الأول */
+}
+.slogan-part.part-3 {
+    animation-delay: 1.9s; /* يظهر في الآخر */
+}
+
+
+/* تعريف الحركة (Keyframes) */
+@keyframes techReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        text-shadow: none;
+    }
+    60% {
+        /* وميض أزرق في نص الحركة */
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.4);
+        color: #fff;
+    }
+    100% {
+        /* الاستقرار على الشكل النهائي */
+        opacity: 0.7;
+        transform: translateY(0);
+        text-shadow: none;
+        color: black
+    }
+}
+
+/* تأثير إضافي: لما تقف بالماوس على منطقة اللوجو كلها، الشعار ينور */
+.navbar-brand:hover .slogan-part {
+    color: black;
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    transition: all 0.3s ease;
+    opacity: 1 !important;
+}
+
+/* =========================================
+   HOLLYWOOD LEVEL INTRO STYLE
+========================================= */
+
+/* 1. المسرح والخلفية */
+.intro-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 99999;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    /* إخفاء الستارة في النهاية */
+    animation: fadeOutScene 0.8s ease forwards 7.5s;
+}
+
+.intro-background {
+    position: absolute; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, #1b2a4e 0%, #05080f 100%);
+    z-index: 1;
+}
+
+/* 2. الحاوية الرئيسية (البطل) */
+.cinematic-container {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column; align-items: center;
+    /* الحركة النهائية للركن */
+    animation: flyToNavbar 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 6.2s;
+}
+
+/* 3. اللوجو والطبقات */
+.logo-wrapper { width: 220px; height: 220px; position: relative; margin-bottom: 20px; }
+
+.intro-svg { overflow: visible; }
+
+/* ستايل الطبقات الموحد */
+.layer-film { opacity: 0; transform-origin: center; }
+
+/* أنيميشن الطبقات (خبطة قوية Slam Effect) */
+.layer-1 { animation: slamDown 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s; }
+.layer-2 { animation: slamDown 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 2.0s; }
+/* الطبقة الأخيرة بتعمل وميض */
+.layer-3 { animation: slamDown 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 3.5s, 
+                      pulseGlow 2s infinite alternate 4.5s; }
+
+/* 4. الشعارات (Pick, Build, Power) */
+.slogan-wrapper {
+    position: absolute; top: 230px; /* تحت اللوجو */
+    width: 300px; height: 50px;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.film-text {
+    position: absolute;
+    font-family: 'Rajdhani', sans-serif; font-size: 2.2rem; font-weight: 700;
+    letter-spacing: 5px; opacity: 0;
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* أنيميشن النصوص (ظهور سينمائي مع تباعد الحروف) */
+.text-1 { color: #9ec1e6; animation: cinematicText 1.4s ease forwards 0.6s; }
+.text-2 { color: #2d6cdf; animation: cinematicText 1.4s ease forwards 2.1s; }
+.text-3 { color: #fff; text-shadow: 0 0 15px #3b82f6; animation: cinematicText 1.4s ease forwards 3.6s; }
+
+/* 5. اسم البراند النهائي (CORE-X) */
+/* 5. اسم البراند النهائي (CORE-X) */
+.core-title {
+    position: absolute; 
+    top: 230px;
+    font-family: 'Rajdhani', sans-serif; 
+    font-size: 4rem; 
+    font-weight: 800; 
+    color: #fff;
+    
+    /* --- الحل السحري للمشكلة --- */
+    white-space: nowrap; /* يمنع نزول الحروف سطر جديد نهائياً */
+    width: 100%;         /* يضمن إن الكلمة واخدة راحتها في العرض */
+    text-align: center;  /* يوسطن الكلمة */
+    /* -------------------------- */
+    
+    letter-spacing: 2px;
+    opacity: 0;
+    
+    /* يظهر بعد الشعارات */
+    animation: revealBrand 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards 5.0s;
+}
+
+/* --- إضافة مهمة: تظبيط الحجم للموبايلات الصغيرة --- */
+@media (max-width: 768px) {
+    .core-title {
+        font-size: 2.5rem; /* تصغير الخط شوية في الموبايل */
+        top: 200px;
+    }
+    .logo-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+    .slogan-wrapper {
+        top: 180px;
+    }
+}
+
+/* =========================================
+   مكتبة الحركات (Animation Keyframes)
+========================================= */
+
+/* حركة نزول الطبقة بقوة (Slam) */
+@keyframes slamDown {
+    0% { opacity: 0; transform: translateY(-100px) scale(1.5); filter: blur(10px); }
+    100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+/* حركة النصوص (Zoom + Spacing) */
+@keyframes cinematicText {
+    0% { opacity: 0; letter-spacing: 15px; transform: scale(1.2); filter: blur(5px); }
+    20% { opacity: 1; letter-spacing: 5px; transform: scale(1); filter: blur(0); }
+    80% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.9); filter: blur(2px); }
+}
+
+/* ظهور اسم CORE-X النهائي */
+@keyframes revealBrand {
+    0% { opacity: 0; transform: scale(0.8); letter-spacing: 0px; filter: blur(10px); }
+    100% { opacity: 1; transform: scale(1); letter-spacing: 8px; filter: blur(0); text-shadow: 0 0 30px rgba(59, 130, 246, 0.4); }
+}
+
+/* الوهج المستمر */
+@keyframes pulseGlow {
+    from { filter: drop-shadow(0 0 2px rgba(59,130,246,0.5)); }
+    to { filter: drop-shadow(0 0 15px rgba(59,130,246,1)); }
+}
+
+/* السفر للركن (الحركة النهائية) */
+@keyframes flyToNavbar {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { 
+        /* إحداثيات مدروسة لمكان الناف بار */
+        transform: translate(-43vw, -42vh) scale(0.22); 
+    }
+}
+
+/* إخفاء الخلفية */
+@keyframes fadeOutScene {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* =========================================
+   التحكم في الناف بار الحقيقي
+========================================= */
+.navbar {
+    opacity: 0;
+    /* يظهر بنعومة في النهاية */
+    animation: navFadeIn 0.8s ease forwards 7.2s;
+}
+@keyframes navFadeIn { to { opacity: 1; } }
+
+/* --- حل مشكلة الناف بار في الصفحات الداخلية --- */
+
+/* 1. إجبار الناف بار يظهر فوراً لو الجسم واخد كلاس no-intro */
+body.no-intro .navbar {
+    opacity: 1 !important; /* يظهر غصب عن أي كود تاني */
+    animation: none !important; /* يلغي انيميشن الانتظار */
+    transform: none !important; /* يلغي أي حركة ترحيل */
+}
+
+/* 2. التأكد إن الخلفية واللون مظبوطين */
+body.no-intro .glass-nav {
+    background: rgba(11, 17, 32, 0.95); /* خلفية كحلي غامق عشان الكلام الأبيض يبان */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 3. تظبيط اللوجو الثابت في الصفحات الداخلية */
+body.no-intro .navbar-brand .logo-container {
+    opacity: 1 !important; /* يظهر اللوجو فوراً */
+    animation: none !important;
+}
+
+/* ============================================================
+   FIXED SEQUENTIAL SHOWCASE (ضد الشاشة السوداء)
+   ============================================================ */
+
+/* 1. المسرح (الشاشة الكاملة) */
+.team-intro-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #05080f;
+    z-index: 9999999;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    /* يختفي بعد 8 ثواني */
+    animation: fadeOutScene 0.5s ease forwards 8s;
+}
+
+/* 2. الخلفية الحية */
+.intro-bg {
+    position: absolute; width: 200%; height: 200%;
+    background: radial-gradient(circle at center, #1b2a4e 0%, #000 80%);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+/* 3. حاوية الكروت */
+.showcase-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* مهم للموبايل */
+    gap: 15px;
+    width: 95%; max-width: 1400px;
+    z-index: 10;
+    /* الفريق يختفي عشان اللوجو يظهر */
+    animation: cardsVanish 0.4s ease forwards 5.5s;
+}
+
+/* 4. الكارت (مهم: ضفت خلفية احتياطي) */
+.showcase-card {
+    width: 130px; height: 190px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    /* ظهور مبدئي */
+    animation: initialFadeIn 0.5s ease forwards 0.5s;
+}
+
+.card-inner {
+    width: 100%; height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #444; /* لون حدود فاتح شوية عشان يبان */
+    transition: all 0.2s ease;
+    
+    /* 🔥 الحل السحري: لون رمادي غامق بدل الأسود */
+    background: #2a2a2a; 
+    
+    /* تقليل التعتيم شوية عشان يبانوا من الأول */
+    filter: brightness(0.5) grayscale(100%);
+}
+
+.card-inner img { 
+    width: 100%; height: 100%; object-fit: cover; 
+    display: block;
+    /* لو الصورة باظت، النص البديل (Alt) يظهر */
+    background-color: #333; 
+    color: #fff;
+    font-size: 10px;
+}
+
+/* بيانات العضو */
+.card-info {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    background: rgba(59, 130, 246, 0.95);
+    padding: 8px 2px; text-align: center;
+    transform: translateY(100%);
+    opacity: 0; /* مخفي */
+}
+
+.card-info h3 { color: #fff; font-size: 0.7rem; margin: 0; font-family: sans-serif; font-weight: 800; }
+.card-info p { color: #000; font-size: 0.5rem; margin: 0; font-weight: bold; }
+
+
+/* ============================================================
+   SPOTLIGHT ANIMATION (الحركة)
+   ============================================================ */
+
+/* الحركة: ينور + جليتش */
+@keyframes glitchSpotlight {
+    0% { transform: scale(1); filter: brightness(0.5) grayscale(100%); border-color: #444; z-index: 1; }
+    10% { transform: scale(1.1) translate(-2px, 2px); filter: brightness(1.2) grayscale(0%); border-color: #fff; z-index: 100; }
+    20% { transform: scale(1.15) translate(2px, -2px); filter: brightness(1.1) grayscale(0%); border-color: #3b82f6; box-shadow: 0 0 25px #3b82f6; }
+    80% { transform: scale(1.15); filter: brightness(1.1) grayscale(0%); border-color: #3b82f6; box-shadow: 0 0 25px #3b82f6; }
+    100% { transform: scale(1); filter: brightness(0.5) grayscale(100%); border-color: #444; z-index: 1; }
+}
+
+@keyframes textPopUp {
+    0% { transform: translateY(100%); opacity: 0; }
+    10% { transform: translateY(0); opacity: 1; }
+    80% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100%); opacity: 0; }
+}
+
+/* التوقيتات (سريعة ومنظمة) */
+.card-1 .card-inner { animation: glitchSpotlight 0.8s ease forwards 1.0s; }
+.card-1 .card-info  { animation: textPopUp 0.8s ease forwards 1.0s; }
+
+.card-2 .card-inner { animation: glitchSpotlight 0.8s ease forwards 1.6s; }
+.card-2 .card-info  { animation: textPopUp 0.8s ease forwards 1.6s; }
+
+.card-3 .card-inner { animation: glitchSpotlight 0.8s ease forwards 2.2s; }
+.card-3 .card-info  { animation: textPopUp 0.8s ease forwards 2.2s; }
+
+.card-4 .card-inner { animation: glitchSpotlight 0.8s ease forwards 2.8s; }
+.card-4 .card-info  { animation: textPopUp 0.8s ease forwards 2.8s; }
+
+.card-5 .card-inner { animation: glitchSpotlight 0.8s ease forwards 3.4s; }
+.card-5 .card-info  { animation: textPopUp 0.8s ease forwards 3.4s; }
+
+.card-6 .card-inner { animation: glitchSpotlight 0.8s ease forwards 4.0s; }
+.card-6 .card-info  { animation: textPopUp 0.8s ease forwards 4.0s; }
+
+.card-7 .card-inner { animation: glitchSpotlight 0.8s ease forwards 4.6s; }
+.card-7 .card-info  { animation: textPopUp 0.8s ease forwards 4.6s; }
+
+
+/* ============================================================
+   FINAL LOGO REVEAL
+   ============================================================ */
+
+.final-logo-reveal {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    pointer-events: none; z-index: 20;
+}
+
+.reveal-svg { 
+    width: 200px; height: 200px; overflow: visible; opacity: 0;
+    animation: logoBoom 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 6.0s;
+}
+
+.rev-layer { transform-origin: center; }
+.l-1 { animation: pulseLogo 2s infinite alternate; fill: #9ec1e6; }
+.l-2 { animation: pulseLogo 2s infinite alternate 0.2s; fill: #2d6cdf; }
+.l-3 { animation: pulseLogo 2s infinite alternate 0.4s; fill: #1a3b70; }
+
+.reveal-title {
+    font-family: 'Rajdhani', sans-serif; font-size: 4rem; font-weight: 800; color: #fff;
+    margin-top: 10px; letter-spacing: 5px; opacity: 0;
+    text-shadow: 0 0 30px rgba(59,130,246,0.8);
+    animation: textZoomIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 6.3s;
+}
+
+/* Helper Keyframes */
+@keyframes initialFadeIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes cardsVanish { 
+    0% { opacity: 1; transform: scale(1); } 
+    100% { opacity: 0; transform: scale(1.2); filter: blur(15px); } 
+}
+@keyframes logoBoom { 
+    0% { opacity: 0; transform: scale(0.5); } 
+    100% { opacity: 1; transform: scale(1); } 
+}
+@keyframes textZoomIn { 
+    0% { opacity: 0; transform: scale(0.8); letter-spacing: 0px; } 
+    100% { opacity: 1; transform: scale(1); letter-spacing: 5px; } 
+}
+@keyframes pulseLogo { from { transform: scale(1); } to { transform: scale(1.02); } }
+@keyframes fadeOutScene { to { opacity: 0; visibility: hidden; } }
+
+/* موبايل */
+@media (max-width: 900px) {
+    .showcase-container { gap: 10px; }
+    .showcase-card { width: 80px; height: 120px; }
+    .reveal-title { font-size: 2.5rem; }
+}
+
+.progress-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 4px;
+    background: transparent; z-index: 100000;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #3b82f6;
+    width: 0%;
+    box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6; /* وهج نيون */
+    transition: width 0.1s ease;
+}

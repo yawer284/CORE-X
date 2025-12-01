@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Core-X</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="no-intro">
+    <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+</div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+    <div class="logo-container">
+        <svg viewBox="0 0 120 120" class="logo-svg">
+            <path class="layer layer-bottom" 
+                  d="M60 85 L100 65 Q110 60 100 55 L60 35 Q50 30 40 35 L5 55 Q-5 60 5 65 Z" 
+                  fill="#9ec1e6" />
+            
+            <path class="layer layer-middle" 
+                  d="M60 70 L100 50 Q110 45 100 40 L60 20 Q50 15 40 20 L5 40 Q-5 45 5 50 Z" 
+                  fill="#2d6cdf" />
+            
+            <path class="layer layer-top" 
+                  d="M60 55 L100 35 Q110 30 100 25 L60 5 Q50 0 40 5 L5 25 Q-5 30 5 35 Z" 
+                  fill="#1a3b70" />
+        </svg>
+    </div>
+    <span class="brand-name fw-bold">Core-X</span>
+</a>
+            
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle-btn me-2" onclick="toggleTheme()">
+    <i class="fas fa-moon" id="themeIcon"></i>
+</button>
+                    <a href="#" class="btn btn-primary rounded-circle position-relative p-2" style="width: 40px; height: 40px;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container mt-5">
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search for a product (Example: RTX 4060, RAM...)" onkeyup="searchProducts()">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">All Products</h2>
+            
+            <div class="text-center mb-5" id="filterButtons">
+                <button class="btn btn-primary m-1" onclick="filterProducts('all')">All</button>
+                <button class="btn btn-outline-secondary m-1" onclick="filterProducts('laptop')">Laptops</button>
+                <button class="btn btn-outline-secondary m-1" onclick="filterProducts('gpu')">GPUs</button>
+                <button class="btn btn-outline-secondary m-1" onclick="filterProducts('cpu')">CPUs</button>
+                <button class="btn btn-outline-secondary m-1" onclick="filterProducts('ram')">RAM</button>
+                <button class="btn btn-outline-secondary m-1" onclick="filterProducts('storage')">Storage</button>
+                <button class="btn btn-outline-secondary m-1" onclick="filterProducts('monitor')">Monitors</button>
+                <button class="btn btn-outline-secondary m-1" onclick="filterProducts('case')">Cases</button>
+                <button class="btn btn-outline-secondary m-1" onclick="filterProducts('motherboard')">Motherboards</button>
+                <button class="btn btn-outline-secondary m-1" onclick="filterProducts('accessories')">Accessories</button>
+            </div>
+
+            <div id="productsContainer">
+                </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="" class="img-fluid rounded" id="modalImg">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="modalTitle"></h4>
+                            <p class="text-primary fs-5 fw-bold" id="modalPrice"></p>
+                            <hr>
+                            <p id="modalDesc" class="text-muted">Product details...</p>
+                            <ul class="small text-secondary">
+                                <li>Comprehensive warranty</li>
+                                <li>Fast shipping supported</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                 <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary add-to-cart-modal" onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-primary mb-3">Core-X Store</h5>
+                    <p class="text-info">Your premier destination for professional PC builds and laptops in Egypt.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-tiktok fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-primary mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-info hover-white">Return Policy</a></li>
+                        <li><a href="#" class="text-decoration-none text-info hover-white">Payment Methods</a></li>
+                        <li><a href="#" class="text-decoration-none text-info hover-white">Track Your Order</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-primary mb-3">Contact Us</h5>
+                    <p class="text-info"><i class="fas fa-phone me-2"></i> 01000000000</p>
+                    <p class="text-info"><i class="fas fa-envelope me-2"></i> support@core-x.com</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-info">
+                <p>&copy; 2024 Core-X Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <a href="https://wa.me/201234567890" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script>
+    // تفعيل الحركة على كروت الفريق والمنتجات
+    VanillaTilt.init(document.querySelectorAll(".hero-card, .showcase-card, .product-card"), {
+        max: 15,          // درجة الميل (كل ما تزيد الميل يزيد)
+        speed: 400,       // سرعة الحركة
+        glare: true,      // لمعة إضاءة
+        "max-glare": 0.3, // قوة اللمعة
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Core-X Store</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body class="no-intro"> 
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <div class="intro-overlay">
+        <div class="intro-background"></div>
+        <div class="cinematic-container">
+            <div class="logo-wrapper">
+                <svg viewBox="0 0 120 120" class="intro-svg">
+                    <path class="layer-film layer-1" d="M60 85 L100 65 Q110 60 100 55 L60 35 Q50 30 40 35 L5 55 Q-5 60 5 65 Z" fill="#9ec1e6" />
+                    <path class="layer-film layer-2" d="M60 70 L100 50 Q110 45 100 40 L60 20 Q50 15 40 20 L5 40 Q-5 45 5 50 Z" fill="#2d6cdf" />
+                    <path class="layer-film layer-3" d="M60 55 L100 35 Q110 30 100 25 L60 5 Q50 0 40 5 L5 25 Q-5 30 5 35 Z" fill="#1a3b70" />
+                </svg>
+            </div>
+            <div class="slogan-wrapper">
+                <div class="film-text text-1">PICK IT</div>
+                <div class="film-text text-2">BUILD IT</div>
+                <div class="film-text text-3">POWER IT</div>
+            </div>
+            <h1 class="core-title">CORE-X</h1>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-3 group-hover-trigger" href="index.html">
+                <div class="logo-container" style="width: 60px; height: 60px;">
+                    <svg viewBox="0 0 120 120" class="logo-svg">
+                        <path class="layer layer-bottom" d="M60 85 L100 65 Q110 60 100 55 L60 35 Q50 30 40 35 L5 55 Q-5 60 5 65 Z" fill="#9ec1e6" />
+                        <path class="layer layer-middle" d="M60 70 L100 50 Q110 45 100 40 L60 20 Q50 15 40 20 L5 40 Q-5 45 5 50 Z" fill="#2d6cdf" />
+                        <path class="layer layer-top" d="M60 55 L100 35 Q110 30 100 25 L60 5 Q50 0 40 5 L5 25 Q-5 30 5 35 Z" fill="#1a3b70" />
+                    </svg>
+                </div>
+                <div class="d-flex flex-column justify-content-center">
+                    <span class="brand-name fw-bold text-white lh-1" style="font-family: 'Rajdhani', sans-serif; font-size: 1.8rem; letter-spacing: 2px;">CORE-X</span>
+                    <div class="slogan-container mt-1" style="font-family: 'Rajdhani', sans-serif; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">
+                        <span class="slogan-part part-1">pick it</span>
+                        <span class="slogan-dot">.</span>
+                        <span class="slogan-part part-2">build it</span>
+                        <span class="slogan-dot">.</span>
+                        <span class="slogan-part part-3">power it</span>
+                    </div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle-btn me-2" onclick="toggleTheme()">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                    <a href="#" class="btn btn-primary rounded-circle position-relative p-2" style="width: 40px; height: 40px;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1920&auto=format&fit=crop" class="d-block w-100" style="height: 600px; object-fit: cover; filter: brightness(0.7);" alt="Gaming PC">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="display-4 fw-bold typing-effect">Powerful Gaming Builds</h2>
+                    <p class="lead">Get unbeatable performance with RTX 40 Series</p>
+                    <a href="products.html" class="cybr-btn text-decoration-none">Shop Now</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1661961110671-77b71b929d52?q=80&w=1920&auto=format&fit=crop" class="d-block w-100" style="height: 600px; object-fit: cover; filter: brightness(0.7);" alt="Laptop">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="display-4 fw-bold">Laptops for Business & Designers</h2>
+                    <p class="lead">Lightweight, powerful performance, and long battery life</p>
+                    <a href="products.html" class="cybr-btn text-decoration-none">Shop Now</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1920&auto=format&fit=crop" class="d-block w-100" style="height: 600px; object-fit: cover; filter: brightness(0.7);" alt="Accessories">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="display-4 fw-bold">Professional Accessories</h2>
+                    <p class="lead">Mice, mechanical keyboards, and gaming headsets</p>
+                    <a href="products.html" class="cybr-btn text-decoration-none">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <section class="py-5 container text-center">
+        <h2 class="section-title">Browse by Category</h2>
+        <div class="row g-4">
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="products.html?cat=laptop" class="text-decoration-none">
+                    <div class="p-4 category-card bg-light rounded hover-lift">
+                        <i class="fas fa-laptop fa-2x mb-3 text-primary"></i>
+                        <h5>Laptops</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="products.html?cat=cpu" class="text-decoration-none">
+                    <div class="p-4 category-card bg-light rounded hover-lift">
+                        <i class="fas fa-microchip fa-2x mb-3 text-primary"></i>
+                        <h5>CPUs</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="products.html?cat=gpu" class="text-decoration-none">
+                    <div class="p-4 category-card bg-light rounded hover-lift">
+                        <i class="fas fa-video fa-2x mb-3 text-primary"></i>
+                        <h5>GPUs</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="products.html?cat=ram" class="text-decoration-none">
+                    <div class="p-4 category-card bg-light rounded hover-lift">
+                        <i class="fas fa-memory fa-2x mb-3 text-primary"></i>
+                        <h5>RAM</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="products.html?cat=storage" class="text-decoration-none">
+                    <div class="p-4 category-card bg-light rounded hover-lift">
+                        <i class="fas fa-hdd fa-2x mb-3 text-primary"></i>
+                        <h5>Storage</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="products.html?cat=monitor" class="text-decoration-none">
+                    <div class="p-4 category-card bg-light rounded hover-lift">
+                        <i class="fas fa-desktop fa-2x mb-3 text-primary"></i>
+                        <h5>Monitors</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="products.html?cat=motherboard" class="text-decoration-none">
+                    <div class="p-4 category-card bg-light rounded hover-lift">
+                        <i class="fas fa-server fa-2x mb-3 text-primary"></i>
+                        <h5>Motherboards</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="products.html?cat=case" class="text-decoration-none">
+                    <div class="p-4 category-card bg-light rounded hover-lift">
+                        <i class="fas fa-plug fa-2x mb-3 text-primary"></i>
+                        <h5>PSUs & Cases</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Best Sellers 🔥</h2>
+                <p class="text-muted">Top rated products chosen for you</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 z-2">#1 Selling</span>
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&q=80&w=400" class="card-img-top" alt="Product 1">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Gaming Mouse X11</h5>
+                            <p class="price-tag text-primary fw-bold">2,500 EGP</p>
+                            <div class="d-flex justify-content-between mt-3">
+                                <button class="btn btn-outline-secondary btn-sm view-btn">View Details</button>
+                                <button class="btn btn-primary btn-sm add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-3 z-2">Special Offer</span>
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=400" class="card-img-top" alt="Product 2">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">ASUS TUF Laptop</h5>
+                            <p class="price-tag text-primary fw-bold">35,000 EGP</p>
+                            <div class="d-flex justify-content-between mt-3">
+                                <button class="btn btn-outline-secondary btn-sm view-btn">View Details</button>
+                                <button class="btn btn-primary btn-sm add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <span class="badge bg-success position-absolute top-0 start-0 m-3 z-2">New Arrival</span>
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1587829741301-dc798b91add1?auto=format&fit=crop&q=80&w=400" class="card-img-top" alt="Product 3">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Mechanical Keyboard</h5>
+                            <p class="price-tag text-primary fw-bold">1,800 EGP</p>
+                            <div class="d-flex justify-content-between mt-3">
+                                <button class="btn btn-outline-secondary btn-sm view-btn">View Details</button>
+                                <button class="btn btn-primary btn-sm add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> 
+            
+            <div class="text-center mt-5">
+                <a href="products.html" class="btn btn-outline-primary px-5 rounded-pill">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white" id="pc-builder">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Build Your Dream PC 🛠️</h2>
+                <p class="text-muted">Select all components to get an estimated price</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card shadow-lg border-0 rounded-4">
+                        <div class="card-body p-5">
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold text-primary"><i class="fas fa-microchip me-2"></i>Processor (CPU)</label>
+                                    <select class="form-select builder-select" id="cpu-select" onchange="calculateTotal()">
+                                        <option value="0">Select CPU...</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold text-primary"><i class="fas fa-video me-2"></i>Graphics Card (GPU)</label>
+                                    <select class="form-select builder-select" id="gpu-select" onchange="calculateTotal()">
+                                        <option value="0">Select GPU...</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold text-primary"><i class="fas fa-server me-2"></i>Motherboard</label>
+                                    <select class="form-select builder-select" id="motherboard-select" onchange="calculateTotal()">
+                                        <option value="0">Select Motherboard...</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold text-primary"><i class="fas fa-memory me-2"></i>RAM Memory</label>
+                                    <select class="form-select builder-select" id="ram-select" onchange="calculateTotal()">
+                                        <option value="0">Select RAM...</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold text-primary"><i class="fas fa-hdd me-2"></i>Storage (SSD/HDD)</label>
+                                    <select class="form-select builder-select" id="storage-select" onchange="calculateTotal()">
+                                        <option value="0">Select Storage...</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold text-primary"><i class="fas fa-box me-2"></i>PC Case</label>
+                                    <select class="form-select builder-select" id="case-select" onchange="calculateTotal()">
+                                        <option value="0">Select Case...</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold text-primary"><i class="fas fa-desktop me-2"></i>Monitor (Optional)</label>
+                                    <select class="form-select builder-select" id="monitor-select" onchange="calculateTotal()">
+                                        <option value="0">Select Monitor...</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div id="compatibility-alert" class="alert mt-3 d-none text-center fw-bold" role="alert"></div>
+
+                            <hr class="my-4">
+                            
+                            <div class="d-flex justify-content-between align-items-center bg-light p-3 rounded-3">
+                                <div>
+                                    <h4 class="mb-0 fw-bold">Total Estimate:</h4>
+                                    <small class="text-muted">* Prices include tax</small>
+                                </div>
+                                <h2 class="text-primary fw-bold mb-0" id="builder-total">0 EGP</h2>
+                            </div>
+                            
+                            <button class="btn btn-success w-100 mt-4 py-3 fw-bold fs-5 shadow-sm" onclick="orderBuild()">
+                                <i class="fab fa-whatsapp me-2"></i> Order This Build via WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Customer Reviews 💬</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100">
+                        <div class="text-warning mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-muted">"Excellent experience! The build arrived on time and prices are better than the market."</p>
+                        <h6 class="fw-bold">- Ahmed Mohamed</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100">
+                        <div class="text-warning mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <p class="text-muted">"Great customer service! They helped me choose the right laptop for my work."</p>
+                        <h6 class="fw-bold">- Sarah Ali</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100">
+                        <div class="text-warning mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-muted">"Original parts with genuine warranty. Thank you Core-X for your reliability."</p>
+                        <h6 class="fw-bold">- Mahmoud Hassan</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-primary mb-3">Core-X Store</h5>
+                    <p class="text-info">Your premier destination for professional PC builds and laptops in Egypt.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-tiktok fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-primary mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-info hover-white">Return Policy</a></li>
+                        <li><a href="#" class="text-decoration-none text-info hover-white">Payment Methods</a></li>
+                        <li><a href="#" class="text-decoration-none text-info hover-white">Track Your Order</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-primary mb-3">Contact Us</h5>
+                    <p class="text-info"><i class="fas fa-phone me-2"></i> 01000000000</p>
+                    <p class="text-info"><i class="fas fa-envelope me-2"></i> support@core-x.com</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-info">
+                <p>&copy; 2024 Core-X Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <a href="https://wa.me/201234567890" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script>
+        // Activate Tilt effect on cards
+        VanillaTilt.init(document.querySelectorAll(".hero-card, .showcase-card, .product-card"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3,
+        });
+    </script>
+</body>
+</html>

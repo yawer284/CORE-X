@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Core-X</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<div class="team-intro-overlay">
+    
+    <div class="intro-bg"></div>
+
+    <div class="showcase-container">
+        
+        <div class="showcase-card card-1">
+            <div class="card-inner">
+                <img src="abdallah.jpg" alt="Abdallah">
+                <div class="card-info">
+                    <h3>Abdallah Fawzy</h3>
+                    <p>Programmer</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-card card-2">
+            <div class="card-inner">
+                <img src="khaled.jpg" alt="Khaled">
+                <div class="card-info">
+                    <h3>Khaled Aref</h3>
+                    <p>Logistic Manager</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-card card-3">
+            <div class="card-inner">
+                <img src="lina.jpg" alt="Lina">
+                <div class="card-info">
+                    <h3>Lina Raslan</h3>
+                    <p>DESIGNER</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-card card-4">
+            <div class="card-inner">
+                <img src="jessica.jpg" alt="Jessica">
+                <div class="card-info">
+                    <h3>Jessika Michael</h3>
+                    <p>AD Specialist</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-card card-5">
+            <div class="card-inner">
+                <img src="fares.jpg" alt="Fares">
+                <div class="card-info">
+                    <h3>FARES Mohamed</h3>
+                    <p>IT SPECIALIST</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-card card-6">
+            <div class="card-inner">
+                <img src="mostafa.jpg" alt="Mostafa">
+                <div class="card-info">
+                    <h3>Mostafa Ahmed </h3>
+                    <p>CFO</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-card card-7">
+            <div class="card-inner">
+                <img src="Ashraqat.jpg" alt="Ashraqt">
+                <div class="card-info">
+                    <h3>Ashraqat Medhat</h3>
+                    <p>public relationship manager</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="final-logo-reveal">
+        <svg viewBox="0 0 120 120" class="reveal-svg">
+            <path class="rev-layer l-1" d="M60 85 L100 65 Q110 60 100 55 L60 35 Q50 30 40 35 L5 55 Q-5 60 5 65 Z" fill="#9ec1e6" />
+            <path class="rev-layer l-2" d="M60 70 L100 50 Q110 45 100 40 L60 20 Q50 15 40 20 L5 40 Q-5 45 5 50 Z" fill="#2d6cdf" />
+            <path class="rev-layer l-3" d="M60 55 L100 35 Q110 30 100 25 L60 5 Q50 0 40 5 L5 25 Q-5 30 5 35 Z" fill="#1a3b70" />
+        </svg>
+        <h1 class="reveal-title">CORE-X</h1>
+    </div>
+
+</div>
+<body class="no-intro">
+    <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+</div>
+<nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+           <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+    <div class="logo-container">
+        <svg viewBox="0 0 120 120" class="logo-svg">
+            <path class="layer layer-bottom" 
+                  d="M60 85 L100 65 Q110 60 100 55 L60 35 Q50 30 40 35 L5 55 Q-5 60 5 65 Z" 
+                  fill="#9ec1e6" />
+            
+            <path class="layer layer-middle" 
+                  d="M60 70 L100 50 Q110 45 100 40 L60 20 Q50 15 40 20 L5 40 Q-5 45 5 50 Z" 
+                  fill="#2d6cdf" />
+            
+            <path class="layer layer-top" 
+                  d="M60 55 L100 35 Q110 30 100 25 L60 5 Q50 0 40 5 L5 25 Q-5 30 5 35 Z" 
+                  fill="#1a3b70" />
+        </svg>
+    </div>
+    <span class="brand-name fw-bold">Core-X</span>
+</a>
+            
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle-btn me-2" onclick="toggleTheme()">
+    <i class="fas fa-moon" id="themeIcon"></i>
+</button>
+                    <a href="#" class="btn btn-primary rounded-circle position-relative p-2" style="width: 40px; height: 40px;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="about-hero position-relative d-flex align-items-center justify-content-center text-white text-center" style="min-height: 60vh; background: linear-gradient(rgba(11, 17, 32, 0.9), rgba(11, 17, 32, 0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80'); background-size: cover; background-attachment: fixed;">
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-3 fw-bold mb-4">Our Story at Core-X</h1>
+            <p class="lead w-75 mx-auto text-white-50 fs-4">Building the future of high-performance computing.</p>
+        </div>
+    </header>
+
+    <section class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h5 class="text-primary fw-bold text-uppercase ls-2">Who We Are</h5>
+                    <h2 class="display-5 fw-bold mb-4 text-dark">Reliable Hardware Online Store</h2>
+                    <p class="text-muted fs-5 lh-lg">
+                        Core‑X started as a small group of hardware enthusiasts who wanted an honest, local place to buy reliable PC parts and fully assembled systems. Over time we grew into a store focused on value, trust, and practical advice.
+                    </p>
+                    <p class="text-muted fs-5 lh-lg">
+                        We deliver fast, transparent service — clear pricing, quick order processing, and dependable after‑sales support. If you prefer, we can also arrange an optional on‑site installation so your new system works perfectly from day one.
+                    </p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="position-relative">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary rounded-4" style="transform: rotate(3deg); z-index: 0; opacity: 0.1;"></div>
+                        <img src="team.png" class="img-fluid rounded-4 shadow-lg position-relative z-1" alt="About Core-X">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center hover-lift">
+                        <div class="icon-box mx-auto mb-4 bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fas fa-eye fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3">Our Vision</h3>
+                        <p class="text-muted fs-5 fst-italic">
+                            Our vision is simple: make high‑performance computing accessible to everyone. We want people to be able to choose, build, or buy a PC that fits their needs and budget — guided by clear advice and real expertise.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center hover-lift">
+                        <div class="icon-box mx-auto mb-4 bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fas fa-rocket fa-3x text-success"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3">Our Mission</h3>
+                        <p class="text-muted fs-5 fst-italic">
+                            Our mission is to offer quality components, honest guidance, and full assembly services so everyone — from first‑time builders to seasoned pros — can get a PC that performs and lasts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark text-white position-relative overflow-hidden">
+        <div class="container text-center position-relative z-2">
+            <div class="row g-5">
+                <div class="col-md-4">
+                    <h2 class="display-4 fw-bold text-primary">24–48h</h2>
+                    <p class="fs-5">Typical delivery window for in‑stock items</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="display-4 fw-bold text-primary">7</h2>
+                    <p class="fs-5">Founding partners and staff dedicated to support</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="display-4 fw-bold text-primary">100%</h2>
+                    <p class="fs-5">Genuine manufacturer warranty on qualifying products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Why Choose Core-X?</h2>
+                
+                <p class="text-muted">Our guiding principles and key strengths</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="fas fa-users-cog fa-2x text-primary mt-1"></i>
+                        <div>
+                            <h5 class="fw-bold">Dedicated Support</h5>
+                            <p class="text-muted">Personalized technical support to help you choose the right parts and build a system that fits your needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="fas fa-wallet fa-2x text-primary mt-1"></i>
+                        <div>
+                            <h5 class="fw-bold">Competitive Pricing</h5>
+                            <p class="text-muted">We balance quality and value so you get great components and fair prices, backed by helpful service.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="fas fa-screwdriver fa-2x text-primary mt-1"></i>
+                        <div>
+                            <h5 class="fw-bold">Home Installation</h5>
+                            <p class="text-muted">Optional on‑site installation — a trained technician can assemble and test your PC at your location for a worry‑free setup.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Core-X Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script>
+    // تفعيل الحركة على كروت الفريق والمنتجات
+    VanillaTilt.init(document.querySelectorAll(".hero-card, .showcase-card, .product-card"), {
+        max: 15,          // درجة الميل (كل ما تزيد الميل يزيد)
+        speed: 400,       // سرعة الحركة
+        glare: true,      // لمعة إضاءة
+        "max-glare": 0.3, // قوة اللمعة
+    });
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
